@@ -92,92 +92,96 @@ ul, li {
 .block-heading p:last-child {
 	margin: 0;
 }
+
 /* Header style goes here */
 #Header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	transition: all 0.3s ease-in-out;
-	z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
 }
 #Header.header-fixed {
-	background: rgba(0, 0, 0, 0.8);
-	transition: all 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease-in-out;
 }
 #Header.header-fixed .site-logo-wrap {
-	padding: 15px 0;
-	transition: all 0.3s ease-in-out;
+    padding: 15px 0;
+    transition: all 0.3s ease-in-out;
 }
-#Header.header-fixed .site-logo-wrap .logo img {
-	width: 70px;
-	transition: all 0.3s ease-in-out;
+#Header.header-fixed .site-logo-wrap .logo {
+    width: 150px;
+    height: 50px;
+    transition: all 0.3s ease-in-out;
 }
 #Header.header-fixed .main-menu {
-	padding: 27px 0;
-	transition: all 0.3s ease-in-out;
+    padding: 27px 0;
+    transition: all 0.3s ease-in-out;
 }
-#Header.header-fixed .main-menu li a {
-	padding: 5px 10px;
-	transition: all 0.3s ease-in-out;
+#Header.header-fixed .main-menu .link {
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
 }
-#Header.header-fixed a.menu-trigger {
-	top: 22px;
-	transition: all 0.3s ease-in-out;
+#Header.header-fixed .menu-trigger {
+    top: 22px;
+    transition: all 0.3s ease-in-out;
 }
 #Header .site-logo-wrap {
-	width: 30%;
-	float: left;
-	padding: 30px 0;
-	transition: all 0.3s ease-in-out;
+    width: 30%;
+    float: left;
+    padding: 30px 0;
+    transition: all 0.3s ease-in-out;
+}
+#Header .site-logo-wrap .logo-link {
+    display: inline-block;
+    text-decoration: none;
 }
 #Header .site-logo-wrap .logo {
-	color: #fff;
-	font-size: 24px;
-	font-style: italic;
-	display: inline-block;
-}
-#Header .site-logo-wrap .logo img {
-	display: inline-block;
-	vertical-align: middle;
-	width: 80px;
+    color: #fff;
+    font-size: 24px;
+    font-style: italic;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background: url('/images/logo.png') no-repeat center center;
+    background-size: contain;
 }
 #Header .main-menu {
-	width: 70%;
-	text-align: right;
-	float: right;
-	padding: 30px 0;
-	transition: all 0.3s ease-in-out;
+    width: 70%;
+    text-align: right;
+    float: right;
+    padding: 30px 0;
+    transition: all 0.3s ease-in-out;
 }
-#Header .main-menu li {
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 10px;
+#Header .main-menu .nav {
+    display: flex;
+    justify-content: flex-end;
 }
-#Header .main-menu li a {
-	position: relative;
-	font-size: 16px;
-	color: #fff;
-	padding: 15px 10px;
+#Header .main-menu .link {
+    position: relative;
+    font-size: 16px;
+    color: #fff;
+    padding: 15px 10px;
+    text-decoration: none;
+    margin-left: 10px;
 }
-#Header .main-menu li a::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #0098aa;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+#Header .main-menu .link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0098aa;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
 }
-#Header .main-menu li a:hover::before, #Header .main-menu li a.active::before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+#Header .main-menu .link:hover::before, 
+#Header .main-menu .link.active::before {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
 /* menu toggler style */

@@ -1,3 +1,5 @@
+import { Route, Router, Routes } from 'react-router-dom';
+
 import AllBooks from './components/all-books/AllBooks';
 import CreateBook from './components/create-book/CreateBook';
 import DetailsBook from './components/details-book/DetailsBook';
@@ -12,25 +14,19 @@ function App() {
 
     return (
         <>
-
             <Header />
 
-            <Home />
-
-            <Register />
-
-            <Login />
-
-            <CreateBook />
-
-            <EditBook />
-
-            <DetailsBook />
-
-            <AllBooks />
+            <Routes>
+                <Route path='/' element={<Home />}/>
+                <Route path='/register' element={<Register />}/>
+                <Route path='/login' element={<Login />}/>
+                <Route path='/books' element={<AllBooks />}/>
+                <Route path='/books/create' element={<CreateBook />}/>
+                <Route path='/books/edit' element={<EditBook />}/>
+                <Route path='/books/details' element={<DetailsBook />}/>
+            </Routes>
 
             <Footer />
-
         </>
     );
 }
