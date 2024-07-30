@@ -1,0 +1,78 @@
+import { useState, useEffect } from 'react';
+
+export default function EditBook() {
+    const [bookData, setBookData] = useState({
+        title: '',
+        author: '',
+        description: '',
+        publishDate: '',
+        genre: ''
+    });
+
+    const handleChange = (e) => {
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+
+    return (
+        <section id="EditBook">
+            <div className="edit-book-content">
+                <h1>Edit Book</h1>
+                <p>Update the details of the book</p>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="title"
+                            value={bookData.title}
+                            onChange={handleChange}
+                            placeholder="Book Title"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="author"
+                            value={bookData.author}
+                            onChange={handleChange}
+                            placeholder="Author Name"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <textarea
+                            name="description"
+                            value={bookData.description}
+                            onChange={handleChange}
+                            placeholder="Book Description"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="date"
+                            name="publishDate"
+                            value={bookData.publishDate}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="genre"
+                            value={bookData.genre}
+                            onChange={handleChange}
+                            placeholder="Book Genre"
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="submit-btn">Update Book</button>
+                </form>
+            </div>
+        </section>
+    );
+}
