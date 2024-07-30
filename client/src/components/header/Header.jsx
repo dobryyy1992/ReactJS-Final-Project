@@ -16,10 +16,10 @@ export default function Header() {
                     <div className="main-menu hidden-md-down">
                         <nav className="nav">
                             <Link className="link" to="/">Home</Link>
-                            <Link className="link" to="/books">Movies</Link>
+                            <Link className="link" to="/books">Books</Link>
                             <Link className="link" to="/register">Register</Link>
                             <Link className="link" to="/login">Login</Link>
-                            <Link className="link" to="/books/create">Add Movie</Link>
+                            <Link className="link" to="/books/create">Add Book</Link>
                             {/* <Link className="link" to="/logout">Logout</Link> */}
                         </nav>
                     </div>
