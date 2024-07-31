@@ -6,7 +6,7 @@ import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
 import Register from './components/register/Register';
-import BooksList from './components/books-list/BooksList';
+import BookList from './components/book-list/BookList';
 import BookCreate from './components/book-create/BookCreate';
 import BookEdit from './components/book-edit/BookEdit';
 import BookDetails from './components/book-details/BookDetails';
@@ -21,7 +21,7 @@ function App() {
                 <Route path='/' element={<Home />}/>
                 <Route path='/register' element={<Register />}/>
                 <Route path='/login' element={<Login />}/>
-                <Route path='/books' element={<BooksList />}/>
+                <Route path='/books' element={<BookList />}/>
                 <Route path='/books/create' element={<BookCreate />}/>
                 <Route path='/books/edit' element={<BookEdit />}/>
                 <Route path='/books/details' element={<BookDetails />}/>
