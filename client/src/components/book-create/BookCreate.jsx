@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-export default function CreateBook() {
+export default function BookCreate() {
     const [bookData, setBookData] = useState({
         title: '',
         author: '',

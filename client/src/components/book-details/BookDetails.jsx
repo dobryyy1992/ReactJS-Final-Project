@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function DetailsBook() {
+export default function BookDetails() {
 
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState('');

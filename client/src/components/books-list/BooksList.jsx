@@ -1,4 +1,4 @@
-export default function AllBooks() {
+export default function BooksList() {
     return (
         <section id="ListAllBooks">
             <div className="list-books-content">

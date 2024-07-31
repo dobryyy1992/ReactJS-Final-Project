@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function EditBook() {
+export default function BookEdit() {
     const [bookData, setBookData] = useState({
         title: '',
         author: '',
