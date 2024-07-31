@@ -16,7 +16,9 @@ export default function DetailsBook() {
                 <div className="book-info">
                     <p><strong>Author:</strong> Author</p>
                     <p><strong>Genre:</strong> Genre</p>
-                    <p><strong>Published:</strong> PublishDate</p>
+                </div>
+                <div className="book-image-container">
+                    <img src='https://www.londonlibrary.co.uk/images/20210408113322.JPG' alt='{book.title}' className="book-image" />
                 </div>
                 <div className="book-description">
                     <h2>Description</h2>
@@ -29,7 +31,7 @@ export default function DetailsBook() {
                 <div className="comments-section">
                     <h2>Comments</h2>
                     <ul className="comments-list">
-                        <li key='' className="comment">
+                        <li key='{index}' className="comment">
                             <p className="comment-text">Text</p>
                             <p className="comment-meta">
                                 By Author on Date
@@ -38,13 +40,15 @@ export default function DetailsBook() {
                     </ul>
                     <p>No comments yet. Be the first to comment!</p>
                     <form onSubmit={handleCommentSubmit} className="comment-form">
-                        <textarea
-                            value={newComment}
-                            onChange={(e) => setNewComment(e.target.value)}
-                            placeholder="Write a comment..."
-                            required
-                        />
-                        <button type="submit" className="action-btn">Add Comment</button>
+                        <div className="form-group">
+                            <textarea
+                                value={newComment}
+                                onChange={(e) => setNewComment(e.target.value)}
+                                placeholder="Write a comment..."
+                                required
+                            />
+                        </div>
+                        <button type="submit" className="submit-btn">Add Comment</button>
                     </form>
                 </div>
             </div>

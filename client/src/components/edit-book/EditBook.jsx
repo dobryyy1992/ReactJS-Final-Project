@@ -51,7 +51,7 @@ export default function EditBook() {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                         <input
                             type="date"
                             name="publishDate"
@@ -59,7 +59,7 @@ export default function EditBook() {
                             onChange={handleChange}
                             required
                         />
-                    </div>
+                    </div> */}
                     <div className="form-group">
                         <input
                             type="text"
@@ -67,6 +67,16 @@ export default function EditBook() {
                             value={bookData.genre}
                             onChange={handleChange}
                             placeholder="Book Genre"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="imageUrl"
+                            value={bookData.imageUrl}
+                            onChange={handleChange}
+                            placeholder="Image Url"
                             required
                         />
                     </div>
