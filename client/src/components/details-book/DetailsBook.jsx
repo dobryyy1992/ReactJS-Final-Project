@@ -22,8 +22,10 @@ export default function DetailsBook() {
                     <h2>Description</h2>
                     <p>Description</p>
                 </div>
-                <button className="action-btn">Edit Book</button>
-
+                <div className="button-group">
+                    <button className="action-btn">Edit Book</button>
+                    <button className="action-btn delete-btn">Delete Book</button>
+                </div>
                 <div className="comments-section">
                     <h2>Comments</h2>
                     <ul className="comments-list">
@@ -34,9 +36,7 @@ export default function DetailsBook() {
                             </p>
                         </li>
                     </ul>
-
                     <p>No comments yet. Be the first to comment!</p>
-
                     <form onSubmit={handleCommentSubmit} className="comment-form">
                         <textarea
                             value={newComment}
