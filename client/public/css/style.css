@@ -725,7 +725,6 @@ ul, li {
     background: url('/images/login-register-books.webp') no-repeat center center / cover;
     background-attachment: fixed;
 }
-
 .list-books-content {
     width: 100%;
     max-width: 1200px;
@@ -736,7 +735,6 @@ ul, li {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .list-books-content h1 {
     font-size: 36px;
     color: #fff;
@@ -745,47 +743,42 @@ ul, li {
     letter-spacing: 2px;
     text-align: center;
 }
-
 .book-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
 }
-
 .book-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.3s ease;
+    text-align: center; /* Center all text content in the card */
 }
-
 .book-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
 .book-picture {
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
-
 .book-info {
     padding: 20px;
 }
-
 .book-info h2 {
     font-size: 20px;
     color: #fff;
     margin: 0 0 10px;
+    text-align: center; /* Ensure title is centered */
 }
-
 .book-info p {
     font-size: 14px;
     color: #e0e0e0;
     margin: 5px 0;
+    text-align: center; /* Center paragraphs */
 }
-
 .action-btn {
     font-size: 16px;
     color: #fff;
@@ -801,12 +794,11 @@ ul, li {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 15px;
+    text-align: center; /* Ensure button text is centered */
 }
-
 .action-btn:hover {
     background-color: #007a8a;
 }
-
 @media (max-width: 768px) {
     .list-books-content {
         padding: 30px 15px;
