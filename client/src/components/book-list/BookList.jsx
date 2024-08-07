@@ -4,18 +4,20 @@ import * as bookService from './../../services/bookService';
 import BookListItem from './book-list-item/Book-List-Item';
 
 export default function BookList() {
+    const [books, setBooks] = useState([]);
+
     useEffect(() => {
         (async () => {
             try {
                 const result = await bookService.getAll();
-                setBooks(Object.values(result));
+                setBooks(result);
             } catch (error) {
                 alert(error.message);
             }
         })();
     }, []);
 
-    const [books, setBooks] = useState([]);
+
 
     return (
         <section id="ListAllBooks">
