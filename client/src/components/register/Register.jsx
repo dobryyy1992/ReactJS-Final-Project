@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import AuthContext from '../../contexts/authContext';
+import useForm from '../../hooks/useForm';
 
 export default function Register() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
-
-  const handleChange = (e) => {
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+    const { registerSubmitHandler } = useContext(AuthContext);
+    const { values, onChange, onSubmit } = useForm({
+        email: '',
+        password: '',
+        confirmPassword: '',
+    }, registerSubmitHandler);
 
   return (
     <section id="RegisterPage">
       <div className="register-content">
         <h1>Create an Account</h1>
         <p>Join our community and start exploring books!</p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={values.email}
+              onChange={onChange}
               placeholder="Email Address"
               required
             />
@@ -34,8 +32,8 @@ export default function Register() {
             <input
               type="password"
               name="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={values.password}
+              onChange={onChange}
               placeholder="Password"
               required
             />
@@ -44,15 +42,15 @@ export default function Register() {
             <input
               type="password"
               name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
+              value={values.confirmPassword}
+              onChange={onChange}
               placeholder="Confirm Password"
               required
             />
           </div>
           <button type="submit" className="submit-btn">Register</button>
         </form>
-        <p className="login-link">Already have an account? <a href="/login">Log in</a></p>
+        <p className="login-link">Already have an account? <Link to="/login">Log in</Link></p>
       </div>
     </section>
   );
