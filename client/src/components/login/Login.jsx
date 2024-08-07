@@ -1,30 +1,29 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import useForm from '../../hooks/useForm';
+import AuthContext from '../../contexts/authContext';
 
 export default function Login() {
-    const [formData, setFormData] = useState({
+    const { loginSubmitHandler  } = useContext(AuthContext);
+    const { values, onChange, onSubmit } = useForm({
         email: '',
-        password: ''
-    });
-
-    const handleChange = (e) => {
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
+        password: '',
+        confirmPassword: '',
+    }, loginSubmitHandler );
 
     return (
         <section id="LoginPage">
             <div className="login-content">
                 <h1>Welcome Back</h1>
                 <p>Log in to your account to continue your journey</p>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={onSubmit}>
                     <div className="form-group">
                         <input
                             type="email"
                             name="email"
-                            value={formData.email}
-                            onChange={handleChange}
+                            value={values.email}
+                            onChange={onChange}
                             placeholder="Email Address"
                             required
                         />
@@ -33,16 +32,15 @@ export default function Login() {
                         <input
                             type="password"
                             name="password"
-                            value={formData.password}
-                            onChange={handleChange}
+                            value={values.password}
+                            onChange={onChange}
                             placeholder="Password"
                             required
                         />
                     </div>
                     <button type="submit" className="submit-btn">Log In</button>
                 </form>
-                <p className="forgot-password"><a href="/forgot-password">Forgot your password?</a></p>
-                <p className="register-link">Don't have an account? <a href="/register">Sign up</a></p>
+                <p className="register-link">Don't have an account? <Link to="/register">Sign up</Link></p>
             </div>
         </section>
     );
