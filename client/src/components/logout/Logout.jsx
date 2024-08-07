@@ -16,7 +16,7 @@ export default function Logout() {
                 navigate('/');
             } catch (e) {
                  logoutHandler();
-                 navigate('/login');
+                 navigate('/');
             }
         })();
     }, []);
