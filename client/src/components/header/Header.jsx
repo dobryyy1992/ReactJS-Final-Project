@@ -20,7 +20,7 @@ export default function Header() {
                             <Link className="link" to="/register">Register</Link>
                             <Link className="link" to="/login">Login</Link>
                             <Link className="link" to="/books/create">Add Book</Link>
-                            {/* <Link className="link" to="/logout">Logout</Link> */}
+                            <Link className="link" to="/logout">Logout</Link>
                         </nav>
                     </div>
                 </div>
