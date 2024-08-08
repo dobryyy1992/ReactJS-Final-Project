@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function BookListItem({
     _id,
     title,
@@ -11,7 +13,7 @@ export default function BookListItem({
                 <h2>{title}</h2>
                 <p><strong>Author:</strong> {author}</p>
             </div>
-            <button className="action-btn">View Details</button>
+            <Link to={`/books/${_id}`} className="action-btn">View Details</Link>
         </div>
     );
 }
