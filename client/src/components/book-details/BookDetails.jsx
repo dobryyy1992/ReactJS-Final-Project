@@ -1,5 +1,5 @@
 import { useContext, useEffect, useReducer, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 import * as bookService from '../../services/bookService';
 import * as commentService from '../../services/commentService';
@@ -47,7 +47,7 @@ export default function BookDetails() {
 
                 {userId === book._ownerId && (
                     <div className="button-group">
-                        <button className="action-btn">Edit Book</button>
+                        <Link to={`/books/${bookId}/edit`} className="action-btn">Edit Book</Link>
                         <button className="action-btn delete-btn">Delete Book</button>
                     </div>
                 )}

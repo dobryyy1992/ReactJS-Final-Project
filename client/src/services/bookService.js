@@ -19,3 +19,9 @@ export const create = async (bookData) => {
 
     return result;
 };
+
+export const edit = async (id, bookData) => {
+    const result = await requester.put(`${baseUrl}/${id}`, bookData);
+
+    return result;
+};

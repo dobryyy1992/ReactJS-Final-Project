@@ -31,7 +31,7 @@ function App() {
 
                 <Route element={<AuthGuard />}>
                     <Route path='/books/create' element={<BookCreate />} />
-                    <Route path='/books/edit' element={<BookEdit />} />
+                    <Route path='/books/:bookId/edit' element={<BookEdit />} />
                     <Route path='/logout' element={<Logout />} />
                 </Route>
             </Routes>
