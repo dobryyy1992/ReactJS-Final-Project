@@ -12,7 +12,7 @@ export const getOne = async (id) => {
     const result = await requester.get(`${baseUrl}/${id}`);
 
     return result;
-}
+};
 
 export const create = async (bookData) => {
     const result = await requester.post(baseUrl, bookData);
