@@ -7,7 +7,7 @@ export const getAll = async (bookId) => {
         where: `bookId="${bookId}"`,
         load: `owner=_ownerId:users`,
     });
-
+    
     const result = await requester.get(`${baseUrl}?${query}`);
 
     return result;
