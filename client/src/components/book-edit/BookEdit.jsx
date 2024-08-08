@@ -5,7 +5,6 @@ export default function BookEdit() {
         title: '',
         author: '',
         description: '',
-        publishDate: '',
         genre: ''
     });
 
@@ -51,15 +50,6 @@ export default function BookEdit() {
                             required
                         />
                     </div>
-                    {/* <div className="form-group">
-                        <input
-                            type="date"
-                            name="publishDate"
-                            value={bookData.publishDate}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div> */}
                     <div className="form-group">
                         <input
                             type="text"

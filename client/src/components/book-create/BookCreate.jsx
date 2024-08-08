@@ -1,34 +1,41 @@
-import { useState } from 'react';
+import { json, useNavigate } from 'react-router-dom';
+
+import * as bookService from '../../services/bookService';
+import useForm from '../../hooks/useForm';
 
 
 export default function BookCreate() {
-    const [bookData, setBookData] = useState({
+    const navigate = useNavigate();
+
+    const createBookSubmitHandler = async (values) => {
+        try {
+            await bookService.create(values);
+            navigate('/books');
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+
+    const { values, onChange, onSubmit } = useForm({
         title: '',
         author: '',
+        genre: '',
         description: '',
-        publishDate: '',
-        genre: ''
-    });
-
-    const handleChange = (e) => {
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    };
+    }, createBookSubmitHandler);
 
     return (
         <section id="CreateBook">
             <div className="create-book-content">
                 <h1>Add a New Book</h1>
                 <p>Enter the details of the book you'd like to add to our collection</p>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={onSubmit}>
                     <div className="form-group">
                         <input
                             type="text"
+                            id="title"
                             name="title"
-                            value={bookData.title}
-                            onChange={handleChange}
+                            value={values.title}
+                            onChange={onChange}
                             placeholder="Book Title"
                             required
                         />
@@ -37,46 +44,41 @@ export default function BookCreate() {
                         <input
                             type="text"
                             name="author"
-                            value={bookData.author}
-                            onChange={handleChange}
+                            id="author"
+                            value={values.author}
+                            onChange={onChange}
                             placeholder="Author Name"
                             required
                         />
                     </div>
                     <div className="form-group">
-                        <textarea
-                            name="description"
-                            value={bookData.description}
-                            onChange={handleChange}
-                            placeholder="Book Description"
-                            required
-                        />
-                    </div>
-                    {/* <div className="form-group">
-                        <input
-                            type="date"
-                            name="publishDate"
-                            value={bookData.publishDate}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div> */}
-                    <div className="form-group">
                         <input
                             type="text"
+                            id="genre"
                             name="genre"
-                            value={bookData.genre}
-                            onChange={handleChange}
+                            value={values.genre}
+                            onChange={onChange}
                             placeholder="Book Genre"
                             required
                         />
                     </div>
                     <div className="form-group">
+                        <textarea
+                            id="description"
+                            name="description"
+                            value={values.description}
+                            onChange={onChange}
+                            placeholder="Book Description"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
                         <input
                             type="text"
+                            id="imageUrl"
                             name="imageUrl"
-                            value={bookData.imageUrl}
-                            onChange={handleChange}
+                            value={values.imageUrl}
+                            onChange={onChange}
                             placeholder="Image Url"
                             required
                         />

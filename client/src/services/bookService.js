@@ -7,3 +7,9 @@ export const getAll = async () => {
 
     return result;
 };
+
+export const create = async (bookData) => {
+    const result = await requester.post(baseUrl, bookData);
+
+    return result;
+};
